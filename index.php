@@ -11,28 +11,26 @@
 <body>
     <h2 align="center">EJERCICIO ESTADISTICO</h2><br>
     <div class="container">
-        <h4>Formula = [(Utilidad / Patrimonio)*100]+[(Ventas/Patrimonio)*100]</h4>
+        <h4>Formula = (Utilidad / Patrimonio)*100+(Ventas/Patrimonio)*100</h4>
     </div>
     <br>
     <div class="container">
-        <form>
+        <form method="post" name="form" id="form" action="conexion.php">
             <div class="form-group">
                 <label for="formGroupExampleInput">Forumla ROE</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ingrese Formula">
+                <input type="text" class="form-control" id="formula" name="formula" placeholder="Ingrese Formula">
             </div>
+            <button type="submit" name="button" class="btn btn-primary">Calcular</button>
         </form>
+        <?php
+        $cadena = '$var ='.' 100+100+100;';
+        eval($cadena);
+        //echo  ($var);
+        ?>
+            <label for="formGroupExampleInput">Resultado</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="ROE" value="<?php echo($var);?>">
     </div>
 </body>
 </html>
-<?php
-$cadena = "El 10 y el número 20 con menores que el 30";
 
-$resultado = intval(preg_replace('/[^0-9]+/', '', $cadena), 10);
 
-echo $resultado; // resultado: 102030
-
-$texto = 'OLHHH12563';
-eregi('^([a-z]+)([0-9]+)$', $texto, $arreglo);
-echo $arreglo[1] . '<br />';
-echo $arreglo[2] . '<br />';
-?>
